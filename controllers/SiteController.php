@@ -164,7 +164,8 @@ class SiteController extends Controller
           var_dump($token);
           //得到过期时间
        // var_dump($token->getClaim('exp'));
-        //正常情况下，先判断用户的token过期没有，没有的话 比较字段里面的user
+        //正常情况下，先判断用户的token过期没有，
+        //没有的话 比较字段里面的user(自定义的字段)
         //["exp"]=>
         //object(Lcobucci\JWT\Claim\GreaterOrEqualsTo)#88 (2) {
         //["name":"Lcobucci\JWT\Claim\Basic":private]=>
