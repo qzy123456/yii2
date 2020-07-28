@@ -2,7 +2,17 @@
 namespace app\controllers;
 use app\models\Service;
 class TestController extends \yii\web\Controller{
-
+    /**
+     * @SWG\Get(path="/user",
+     *     tags={"User"},
+     *     summary="Retrieves the collection of User resources.",
+     *     @SWG\Response(
+     *         response = 200,
+     *         description = "User collection response",
+     *         @SWG\Schema(ref = "#/definitions/User")
+     *     ),
+     * )
+     */
     public function actionIndex(){
         \Yii::$app->websocket->send([
             'channel' => 'push-message',

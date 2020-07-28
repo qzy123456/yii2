@@ -76,7 +76,6 @@ class WorkermanWebSocketController extends Controller
         // Emitted when data received
         $wsWorker->onMessage = function ($connection, $data) {
             // Send hello $data
-            var_dump($connection);
             $connection->send('dddd hello ' . $data);
         };
 

@@ -10,18 +10,32 @@ $config = [
         'log',
         'websocket'
         ],
+    'modules' => [
+        'v1' => [
+            'class' => 'app\modules\v1\Module'
+        ]
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@api'   => '@app',
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '9NUFAmlYboBbcqnQsaET-bF_uWCoRfuq',
             'enableCsrfValidation'=>false,
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'response' => [
+
+           // 'format' => 'json'
+
         ],
         'session' => [ //当服务器
             'name' => 'advanced-frontend',
